@@ -6,56 +6,37 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "todos")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Long id;
 
+
     @Column(name = "nome")
+    @Getter
+    @Setter
     private String nome;
 
     @Column(name = "descricao")
+    @Getter
+    @Setter
     private String descricao;
 
     @Column(name = "realizado")
+    @Getter
+    @Setter
     private boolean realizado = false;
 
     @Column(name = "prioridade")
+    @Getter
+    @Setter
     private Integer prioridade;
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public Boolean getRealizado() {
-        return realizado;
-    }
-    public void setRealizado(Boolean realizado) {
-        this.realizado = realizado;
-    }
-    public Integer getPrioridade() {
-        return prioridade;
-    }
-    public void setPrioridade(Integer prioridade) {
-        this.prioridade = prioridade;
-    }
 
     
 }
